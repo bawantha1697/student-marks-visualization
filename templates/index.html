@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Visualization</title>
+</head>
+<body>
+    <h1>Student Marks Visualization</h1>
+    <form method="POST">
+        <div>
+            <input type="text" name="student" placeholder="Name" required>
+            <input type="number" name="maths" placeholder="Maths" required>
+            <input type="number" name="science" placeholder="Science" required>
+            <input type="number" name="english" placeholder="English" required>
+        </div>
+        <button type="submit">Add & Show Chart</button>
+    </form>
+
+    {% if chart_url %}
+    <h2>Maths Marks Chart</h2>
+    <img src="data:image/png;base64,{{ chart_url }}" />
+    {% endif %}
+</body>
+</html>
